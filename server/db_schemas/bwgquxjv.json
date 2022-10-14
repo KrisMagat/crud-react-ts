@@ -1,0 +1,386 @@
+{
+    "public": {
+        "films": {
+            "_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "default": "nextval('films__id_seq'::regclass)",
+                "nullable": false
+            },
+            "title": {
+                "type": "string",
+                "nullable": false
+            },
+            "episode_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "nullable": false
+            },
+            "opening_crawl": {
+                "type": "string",
+                "nullable": false
+            },
+            "director": {
+                "type": "string",
+                "nullable": false
+            },
+            "producer": {
+                "type": "string",
+                "nullable": false
+            },
+            "release_date": {
+                "type": "string",
+                "format": "date",
+                "nullable": false
+            }
+        },
+        "people": {
+            "_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "default": "nextval('people__id_seq'::regclass)",
+                "nullable": false
+            },
+            "name": {
+                "type": "string",
+                "nullable": false
+            },
+            "mass": {
+                "type": "string",
+                "nullable": true
+            },
+            "hair_color": {
+                "type": "string",
+                "nullable": true
+            },
+            "skin_color": {
+                "type": "string",
+                "nullable": true
+            },
+            "eye_color": {
+                "type": "string",
+                "nullable": true
+            },
+            "birth_year": {
+                "type": "string",
+                "nullable": true
+            },
+            "gender": {
+                "type": "string",
+                "nullable": true
+            },
+            "species_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": true
+            },
+            "homeworld_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": true
+            },
+            "height": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "nullable": true
+            }
+        },
+        "people_in_films": {
+            "_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "default": "nextval('people_in_films__id_seq'::regclass)",
+                "nullable": false
+            },
+            "person_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": false
+            },
+            "film_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": false
+            }
+        },
+        "pilots": {
+            "_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "default": "nextval('pilots__id_seq'::regclass)",
+                "nullable": false
+            },
+            "person_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": false
+            },
+            "vessel_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": false
+            }
+        },
+        "planets": {
+            "_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "default": "nextval('planets__id_seq'::regclass)",
+                "nullable": false
+            },
+            "name": {
+                "type": "string",
+                "nullable": true
+            },
+            "rotation_period": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "nullable": true
+            },
+            "orbital_period": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "nullable": true
+            },
+            "diameter": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "nullable": true
+            },
+            "climate": {
+                "type": "string",
+                "nullable": true
+            },
+            "gravity": {
+                "type": "string",
+                "nullable": true
+            },
+            "terrain": {
+                "type": "string",
+                "nullable": true
+            },
+            "surface_water": {
+                "type": "string",
+                "nullable": true
+            },
+            "population": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": true
+            }
+        },
+        "planets_in_films": {
+            "_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "default": "nextval('planets_in_films__id_seq'::regclass)",
+                "nullable": false
+            },
+            "film_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": false
+            },
+            "planet_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": false
+            }
+        },
+        "species": {
+            "_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "default": "nextval('species__id_seq'::regclass)",
+                "nullable": false
+            },
+            "name": {
+                "type": "string",
+                "nullable": false
+            },
+            "classification": {
+                "type": "string",
+                "nullable": true
+            },
+            "average_height": {
+                "type": "string",
+                "nullable": true
+            },
+            "average_lifespan": {
+                "type": "string",
+                "nullable": true
+            },
+            "hair_colors": {
+                "type": "string",
+                "nullable": true
+            },
+            "skin_colors": {
+                "type": "string",
+                "nullable": true
+            },
+            "eye_colors": {
+                "type": "string",
+                "nullable": true
+            },
+            "language": {
+                "type": "string",
+                "nullable": true
+            },
+            "homeworld_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": true
+            }
+        },
+        "species_in_films": {
+            "_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "default": "nextval('species_in_films__id_seq'::regclass)",
+                "nullable": false
+            },
+            "film_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": false
+            },
+            "species_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": false
+            }
+        },
+        "starship_specs": {
+            "_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "default": "nextval('starship_specs__id_seq'::regclass)",
+                "nullable": false
+            },
+            "hyperdrive_rating": {
+                "type": "string",
+                "nullable": true
+            },
+            "MGLT": {
+                "type": "string",
+                "nullable": true
+            },
+            "vessel_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": false
+            }
+        },
+        "vessels": {
+            "_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "default": "nextval('vessels__id_seq'::regclass)",
+                "nullable": false
+            },
+            "name": {
+                "type": "string",
+                "nullable": false
+            },
+            "manufacturer": {
+                "type": "string",
+                "nullable": true
+            },
+            "model": {
+                "type": "string",
+                "nullable": true
+            },
+            "vessel_type": {
+                "type": "string",
+                "nullable": false
+            },
+            "vessel_class": {
+                "type": "string",
+                "nullable": false
+            },
+            "cost_in_credits": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": true
+            },
+            "length": {
+                "type": "string",
+                "nullable": true
+            },
+            "max_atmosphering_speed": {
+                "type": "string",
+                "nullable": true
+            },
+            "crew": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "nullable": true
+            },
+            "passengers": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "nullable": true
+            },
+            "cargo_capacity": {
+                "type": "string",
+                "nullable": true
+            },
+            "consumables": {
+                "type": "string",
+                "nullable": true
+            }
+        },
+        "vessels_in_films": {
+            "_id": {
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "type": "integer",
+                "default": "nextval('vessels_in_films__id_seq'::regclass)",
+                "nullable": false
+            },
+            "vessel_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": false
+            },
+            "film_id": {
+                "minimum": -9223372036854776000,
+                "maximum": 9223372036854776000,
+                "type": "integer",
+                "nullable": false
+            }
+        }
+    }
+}
